@@ -2,21 +2,21 @@ import propTypes from "prop-types";
 import { UserFavoriteFoods } from "./UserFavoriteFoods";
 import { UserUserName } from "./UserUserName";
 
-export function UserProfile(props) {
+export function UserProfile({ user }) {
   return (
     <>
-      <UserUserName username={props.username} acc_type="Admin" />
+      <UserUserName username={user.username} acc_type="Admin" />
       <br />
-      <b>ID :{props.id} </b>
+      <b>ID :{user.id} </b>
       <br />
       <b>Age : </b>
-      <span>{props.age}</span>
+      <span>{user.age}</span>
       <br />
       <>
         <span>
           <b>Email: </b>
         </span>
-        <span>kanna@gmail.com</span>
+        <span>{user.email}</span>
       </>
       <UserFavoriteFoods />
     </>
@@ -24,7 +24,9 @@ export function UserProfile(props) {
 }
 
 UserProfile.propTypes = {
-  username: propTypes.string.isRequired,
-  age: propTypes.number.isRequired,
-  isLoggedIn: propTypes.bool,
+  user: propTypes.shape({
+    username: propTypes.string.isRequired,
+    age: propTypes.number.isRequired,
+    isLoggedIn: propTypes.bool,
+  }),
 };

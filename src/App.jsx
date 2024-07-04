@@ -8,66 +8,29 @@ export default function App() {
       username: "kanna",
       age: 20,
       isLoggedIn: false,
-      favoriteFoods: [
-        {
-          name: "Pizza",
-        },
-      ],
+      email: "kanna@gmail.com",
     },
     {
       id: "2",
       username: "jane",
       age: 30,
       isLoggedIn: true,
-      favoriteFoods: [
-        {
-          name: "Burger",
-        },
-        {
-          name: "Fries",
-        },
-      ],
+      email: "jane@gmail.com",
     },
     {
       id: "3",
       username: "john",
       age: 25,
       isLoggedIn: true,
-      favoriteFoods: [
-        {
-          name: "Pasta",
-        },
-        {
-          name: "Salad",
-        },
-      ],
+      email: "john@gmail.com",
     },
   ];
   return (
     <div>
       <h1>Root Component</h1>
-      {/* <UserProfile
-        username="kanna"
-        age={20}
-        isLoggedIn={false}
-        favoriteFoods={[
-          {
-            name: "Pizza",
-          },
-        ]}
-      /> */}
+
       {mockUsers.map((user) => {
-        return (
-          <UserProfile
-            key={user.id}
-            id={user.id}
-            username={user.username}
-            age={user.age}
-            isLoggedIn={user.isLoggedIn}
-            favoriteFoods={user.favoriteFoods}
-          />
-        );
-        <br />;
+        return <UserProfile key={user.id} user={user} />;
       })}
     </div>
   );
