@@ -4,7 +4,6 @@ export function UserFavoriteFoods() {
       <span>
         <b>Favorite foods : </b>
       </span>
-      <br />
       <ul>
         <li>Pizza</li>
         <li>Ramen</li>

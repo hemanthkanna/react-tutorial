@@ -6,6 +6,9 @@ export function UserProfile(props) {
   return (
     <>
       <UserUserName username={props.username} acc_type="Admin" />
+      <br />
+      <b>ID :{props.id} </b>
+      <br />
       <b>Age : </b>
       <span>{props.age}</span>
       <br />
